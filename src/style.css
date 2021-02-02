@@ -1,4 +1,141 @@
-h1 {
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.weather-app-wrapper {
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 20px 40px;
+  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+  opacity: 0.9;
+  font-family: "Raleway", sans-serif;
+  letter-spacing: 0.5px;
+  color: #fff;
+}
+
+/* FONT SIZES */
+footer,
+.temp-additional-info,
+.footer {
+  font-size: 15px;
+}
+
+#date-time,
+#sunrise-sunset-icon,
+.weather-forecast-items h1,
+.weather-forecast-items h2 {
+  font-size: 17px;
+}
+
+/* SEARCH-FORM */
+#search-form {
+  margin: 15px 0;
+}
+
+#btn-search {
+  color: #330867;
+}
+
+#btn-search:hover {
+  color: #a29aaa;
+}
+
+#btn-current-location:hover {
+  color: #330867;
+}
+
+/* WEATHER OVERVIEW SECTION */
+#weather-overview-section {
+  padding-top: 15px;
+}
+
+/* LEFT-TEMPERATURE-WRAPPER */
+.temperature-wrapper {
+  padding: 15px;
+}
+
+#location {
+  margin-top: 10px;
+  font-size: 40px;
+  font-weight: 500;
+}
+
+#temperature {
+  padding-right: 30px;
+  font-size: 70px;
+  font-weight: 500;
+  line-height: 70px;
+}
+
+/* Celcius to Fahrenheit */
+.temp-unit {
+  position: relative;
+  top: -30px;
+  left: -15px;
+  border-bottom: 1px solid transparent;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.temp-unit a {
+  color: #330867;
+  text-decoration: none;
+}
+
+.temp-unit .inactive:hover {
+  color: #a29aaa;
+  border-bottom: 1px solid #a29aaa;
+  transition: all 200ms ease-in-out;
+}
+
+.temp-unit .active {
+  color: #fff;
+  cursor: default;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+
+.temp-unit .active:hover {
+  text-decoration: none;
+}
+
+#weather-description {
+  position: relative;
+  left: -80px;
+  bottom: -10px;
+  font-size: 27px;
+  font-weight: 500;
+  text-transform: lowercase;
+}
+
+/* RIGHT-TEMPERATURE-WRAPPER */
+
+.temp-additional-info {
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  list-style-type: none;
+}
+
+/* WEATHER-FORECAST-SECTION */
+#forecast {
+  margin: 25px 0 15px;
+}
+
+.weather-forecast-items {
+  margin: 0 5px;
   text-align: center;
-  color: orange;
+}
+
+.weather-forecast-items img {
+  max-width: 70px;
+  max-height: 70px;
+}
+
+footer {
+  margin-top: 15px;
+  text-align: center;
+  font-family: "Roboto Mono", monospace;
+  color: #330867;
 }

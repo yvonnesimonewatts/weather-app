@@ -1,14 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SheCodes Final Project</title>
-  <link rel="stylesheet" href="src/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>weather-app</title>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap" rel="stylesheet">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+  <!-- bootstrap icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+  <link rel="stylesheet" href="src/style.css" />
+
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 </head>
+
 <body>
-  <h1>hello world</h1>
-  
+  <div class="container">
+    <div class="weather-app-wrapper border rounded shadow">
+
+      <form id="search-form">
+        <div class="row gx-2 justify-content-end">
+          <div class="col-5">
+            <div class="input-group">
+              <input type="text" class="form-control" id="search-input" placeholder="Enter a city" autocomplete="off" />
+              <button type="submit" class="btn btn-light" id="btn-search">
+                <i class="bi bi-search"></i>
+              </button>
+            </div>
+          </div>
+          <div class="col-1 btn-group">
+            <button type="submit" class="btn btn-outline-light" id="btn-current-location">
+              <i class="bi bi-arrows-move"></i>
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <section id="weather-overview-section">
+        <div class="row timestamp-wrapper">
+          <div class="col-7" class="date-time">
+            <span id="date-time"></span>
+          </div>
+        </div>
+
+        <div class="row temperature-wrapper">
+          <div class="col-md-7 left-temperature-wrapper">
+            <div id="location"></div>
+            <div class="currentTemperature">
+              <span id="temperature"></span>
+              <span class="temp-unit">
+                <a href="#" id="celsius-link" class="active">°C</a>
+                <span class="link-pipe">|</span>
+                <a href="#" id="fahrenheit-link" class="inactive">°F</a>
+              </span>
+              <span id="weather-description"></span>
+            </div>
+          </div>
+
+          <div class="col-md-2 mid-temperature-wrapper">
+            <img src="" id="temp-icon">
+          </div>
+
+          <div class="col-md-3 right-temperature-wrapper align-self-end">
+            <ul class="temp-additional-info">
+              <li>
+                Humidity:
+                <span id="humidity"> </span>
+                %
+              </li>
+              <li>
+                Wind:
+                <span id="wind"> </span>
+                mph
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="weather-forecast-section">
+        <div class="row weather-forecast-wrapper justify-content-center" id="forecast"></div>
+      </section>
+    </div>
+  </div>
+
+  <footer>
+    Coded by Yvonne Simone
+  </footer>
 
   <script src="src/script.js"></script>
 </body>
