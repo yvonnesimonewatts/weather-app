@@ -137,5 +137,18 @@ footer {
   margin-top: 15px;
   text-align: center;
   font-family: "Roboto Mono", monospace;
+  letter-spacing: -0.5px;
   color: #330867;
+}
+
+.footer-link {
+  color: #330867;
+  text-decoration: none;
+  border-bottom: 1px solid #330867;
+}
+
+.footer-link:hover {
+  color: #a29aaa;
+  border-bottom: 1.5px solid #a29aaa;
+  transition: all 200ms ease-in-out;
 }
