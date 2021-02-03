@@ -1,4 +1,3 @@
-// DATE & TIME
 function formatDate(timestamp) {
   let date = new Date(timestamp);
   let days = [
@@ -45,11 +44,10 @@ function formatTime(timestamp) {
     minutes = `0${minutes}`;
   }
 
-  return `${hours}:${minutes}`;
+  return `${hours}:${minutes}`;  
 }
 
-// TEMPERATURE INFORMATION
-function showTemperature(response) {
+function showWeatherInformation(response) {
   celsiusTemperature = Math.round(response.data.main.temp);
   document.querySelector("#date-time").innerHTML = formatDate(response.data.dt * 1000);
   document.querySelector("#location").innerHTML = response.data.name;
@@ -57,11 +55,9 @@ function showTemperature(response) {
   document.querySelector("#weather-description").innerHTML = response.data.weather[0].main;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed * 2.237);
-
   document.querySelector('#temp-icon').setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 }
 
-// FORECAST
 function handleForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   forecastElement.innerHTML = null;
@@ -69,7 +65,7 @@ function handleForecast(response) {
 
   for (let index = 0; index < 5; index++) {
     forecast = response.data.list[index];
-    forecastElement.innerHTML += `<div class="col-2 weather-forecast-items border p-2 rounded shadow">
+    forecastElement.innerHTML += `<div class="col d-none d-sm-block weather-forecast-items border  p-2 mt-2 rounded shadow">
       <h1>
         <strong>${formatTime(forecast.dt * 1000)}</strong>
       </h1>
@@ -88,7 +84,7 @@ function handleForecast(response) {
 function handleCity(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=fe75cdcdc7e5e9de834be3340e916f6e`;
 
-  axios.get(apiUrl).then(showTemperature);
+  axios.get(apiUrl).then(showWeatherInformation);
 
   apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&APPID=fe75cdcdc7e5e9de834be3340e916f6e`;
 
@@ -112,7 +108,7 @@ handleCity("London");
 function handleLocation(position) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&APPID=fe75cdcdc7e5e9de834be3340e916f6e`;
 
-  axios.get(apiUrl).then(showTemperature);
+  axios.get(apiUrl).then(showWeatherInformation);
 }
 
 // FORMAT CURRENT LOCATION BTN FEATURE
@@ -124,7 +120,6 @@ function getCurrentLocation(event) {
 let btnCurrentLocation = document.querySelector("#btn-current-location");
 btnCurrentLocation.addEventListener("click", getCurrentLocation);
 
-// FORMAT FAHRENHEIT & CELSIUS
 function convertFahrenheit(event) {
   event.preventDefault();
   celsiusLink.classList.remove("active");
