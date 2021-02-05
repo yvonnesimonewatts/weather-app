@@ -4,9 +4,9 @@
 }
 
 .weather-app-wrapper {
-  max-width: 700px;
+  max-width: 570px;
   margin: 20px auto;
-  padding: 20px 30px;
+  padding: 20px 20px;
   background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
   opacity: 0.9;
   font-family: "Raleway", sans-serif;
@@ -14,21 +14,20 @@
   color: #fff;
 }
 
-/* FONT SIZES */
-footer,
-.temp-additional-info {
-  font-size: 15px;
+/* FONTS */
+#date-time,
+.temp-additional-info,
+.weather-forecast-items h2 {
+  font-size: 14px;
 }
 
-#date-time,
-.weather-forecast-items h1,
-.weather-forecast-items h2 {
-  font-size: 17px;
+.weather-forecast-items h1 {
+  font-size: 16px;
 }
 
 /* SEARCH-FORM */
 #search-form {
-  margin-top: 15px;
+  margin-top: 15px 15px 0 15px;
 }
 
 #btn-search {
@@ -45,33 +44,38 @@ footer,
 
 /* WEATHER OVERVIEW SECTION */
 #weather-overview-section {
-  margin-top: 20px;
+  padding-top: 20px;
+}
+
+.timestamp-wrapper,
+.temperature-wrapper {
+  padding: 0 15px;
 }
 
 #location {
   margin-top: 10px;
-  font-size: 40px;
+  font-size: 35px;
   font-weight: 500;
 }
 
 #temperature {
   padding-right: 30px;
-  font-size: 70px;
+  font-size: 45px;
   font-weight: 500;
   line-height: 70px;
 }
 
 .temp-unit {
   position: relative;
-  top: -30px;
-  left: -15px;
+  top: -20px;
+  left: -25px;
   border-bottom: 1px solid transparent;
   font-size: 22px;
   font-weight: 500;
 }
 
 .temp-unit a {
-  color: #330867;
+  color: #ef7d5e;
   text-decoration: none;
 }
 
@@ -92,10 +96,12 @@ footer,
   text-decoration: none;
 }
 
+#temp-icon {
+  display: block;
+  margin: 0 auto;
+}
+
 #weather-description {
-  position: relative;
-  left: -75px;
-  bottom: -5px;
   font-size: 25px;
   font-weight: 500;
   text-transform: lowercase;
@@ -110,7 +116,7 @@ footer,
 
 /* WEATHER-FORECAST-SECTION */
 #forecast {
-  margin: 30px 0 15px;
+  margin: 20px 0 15px;
 }
 
 .weather-forecast-items {
@@ -124,9 +130,10 @@ footer,
 }
 
 footer {
-  margin-top: 15px;
+  margin: 15px 0;
   text-align: center;
   font-family: "Roboto Mono", monospace;
+  font-size: 12px;
   letter-spacing: -0.5px;
   color: #330867;
 }

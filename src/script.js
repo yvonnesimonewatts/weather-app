@@ -65,7 +65,7 @@ function handleForecast(response) {
 
   for (let index = 0; index < 5; index++) {
     forecast = response.data.list[index];
-    forecastElement.innerHTML += `<div class="col d-none d-sm-block weather-forecast-items border  p-2 mt-2 rounded shadow">
+    forecastElement.innerHTML += `<div class="col-md-2 weather-forecast-items border p-2 mt-2 rounded shadow">
       <h1>
         <strong>${formatTime(forecast.dt * 1000)}</strong>
       </h1>
@@ -95,7 +95,7 @@ function handleCity(city) {
 function enterCity(event) {
   event.preventDefault();
   let city = document.querySelector("#search-input").value;
-
+  
   handleCity(city);
 }
 

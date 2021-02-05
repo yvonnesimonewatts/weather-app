@@ -29,10 +29,9 @@
   <div class="container">
     <div class="weather-app-wrapper border rounded shadow">
 
-      
       <form id="search-form">
-        <div class="row gy-1 gx-2 justify-content-end">
-          <div class="col-auto">
+        <div class="row g-2 justify-content-end">
+          <div class="col col-sm-auto">
             <div class="input-group">
               <input type="text" class="form-control" id="search-input" placeholder="Enter a city" autocomplete="off" />
               <button type="submit" class="btn btn-light" id="btn-search">
@@ -50,13 +49,11 @@
 
       <section id="weather-overview-section">
         <div class="row timestamp-wrapper">
-          <div class="col" class="date-time">
-            <span id="date-time"></span>
-          </div>
+          <div class="col" class="date-time" id="date-time"></div>
         </div>
 
         <div class="row temperature-wrapper">
-          <div class="col-md-6 left-temperature-wrapper">
+          <div class="col-xs-12 col-md-5 left-temperature-wrapper">
             <div id="location"></div>
             <div class="currentTemperature">
               <span id="temperature"></span>
@@ -65,16 +62,18 @@
                 <span class="link-pipe">|</span>
                 <a href="#" id="fahrenheit-link" class="inactive">°F</a>
               </span>
-              <span id="weather-description"></span>
             </div>
           </div>
 
           <div class="col-md-3 mid-temperature-wrapper">
-            <img src="" id="temp-icon">
+            <img src="" id="temp-icon" class="img-fluid" alt="weather icon">
           </div>
 
-          <div class="col-md-3 right-temperature-wrapper align-self-end">
+          <div class="col-md-4 right-temperature-wrapper align-self-end">
             <ul class="temp-additional-info">
+              <li>
+                <span id="weather-description"></span>
+              </li>
               <li>
                 Humidity:
                 <span id="humidity"> </span>
