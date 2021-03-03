@@ -109,6 +109,10 @@ function handleLocation(position) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&APPID=fe75cdcdc7e5e9de834be3340e916f6e`;
 
   axios.get(apiUrl).then(showWeatherInformation);
+  
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${position.coords.latitude}&lon=${position.coords.longitude}&units=metric&APPID=fe75cdcdc7e5e9de834be3340e916f6e`;
+  
+  axios.get(apiUrl).then(handleForecast);
 }
 
 // FORMAT CURRENT LOCATION BTN FEATURE
